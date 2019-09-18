@@ -12,7 +12,7 @@
 		이렇게 해야 한다. -->
 
 	<select id="selectMember" resultType="MemberModel">
-		SELECT USER_ID, USER_PW ,NAME FROM USER
+		SELECT USER_ID, USER_PW , USER_NAME, USER_ADD, USER_ADD, USER_ADD_CODE, IF('IS_ACTIVE', 'true', 'false') FROM USER
 	</select>
 
 </mapper>

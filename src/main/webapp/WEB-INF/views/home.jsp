@@ -21,8 +21,10 @@
 				<tr>
 					<td>${member.user_id}</td>
 					<td>${member.user_pw}</td>
-					<td>${member.name}</td>
-					<td>${member.address}</td>
+					<td>${member.user_name}</td>
+					<td>${member.user_add}</td>
+					<td>${member.user_add_code}</td>
+					<td>${member.is_active}</td>
 				</tr>
 			</c:forEach>
 		</tbody>
