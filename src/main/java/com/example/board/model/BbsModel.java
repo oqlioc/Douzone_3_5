@@ -40,7 +40,11 @@ public class BbsModel {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-    
 	
-    
+	@Override
+	public String toString() {
+		return "BbsModel [boardNo=" + boardNo + ", title=" + title + ", content=" + content + ", regDate=" + regDate
+				+ ", userId=" + userId + "]";
+	}
+	
 }

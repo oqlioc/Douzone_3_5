@@ -1,6 +1,5 @@
 package com.example.board.dao;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -45,6 +44,7 @@ public class BbsDAOImpl implements BbsDAO {
 
 	@Override
 	public void bbsModify(BbsModel bbsModel) {
+		System.out.println(bbsModel.toString());
 		session.update(Namespace + ".updateBbsModify", bbsModel);
 	}
 }

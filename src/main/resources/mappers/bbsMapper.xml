@@ -28,7 +28,7 @@
 	</delete>
 	
 	<update id="updateBbsModify">
-		UPDATE BBS SET title = #{bbsModel.title}, content = #{bbsModel.content}, reg_date = now() WHERE BOARD_NO = #{bbsModel.boardNo}
+		UPDATE BBS SET title = #{title}, content = #{content}, reg_date = now() WHERE BOARD_NO = #{boardNo}
 	</update>
    
 </mapper>

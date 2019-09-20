@@ -8,6 +8,7 @@ public class MemberModel {
     private String userAdd;
     private int useAddCode;
     private Boolean isActive;
+    
 	public String getUserId() {
 		return userId;
 	}
@@ -44,6 +45,11 @@ public class MemberModel {
 	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-    
+	
+	@Override
+	public String toString() {
+		return "MemberModel [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userAdd="
+				+ userAdd + ", useAddCode=" + useAddCode + ", isActive=" + isActive + "]";
+	}
 	
 }

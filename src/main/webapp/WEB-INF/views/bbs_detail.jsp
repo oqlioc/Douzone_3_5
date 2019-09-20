@@ -27,6 +27,14 @@
 			</tr>
 			<tr>
 				<td>
+					<div align="center">글번호</div>
+				</td>
+				<td>
+					<input name="boardNo" type="text" size="50" maxlength="100" value="${bbsModel.boardNo}" readonly />
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<div align="center">작성자</div>
 				</td>
 				<td>
