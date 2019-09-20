@@ -15,4 +15,8 @@
 		SELECT USER_ID, USER_PW , USER_NAME, USER_ADD, USER_ADD, USER_ADD_CODE, IF('IS_ACTIVE', 'true', 'false') FROM USER
 	</select>
 
+	<select id="selectMemberLogin" resultType="MemberModel">
+		SELECT USER_ID, USER_PW , USER_NAME, USER_ADD, USER_ADD, USER_ADD_CODE, IF('IS_ACTIVE', 'true', 'false') FROM USER WHERE USER_ID = #{user_id}
+	</select>
+	
 </mapper>

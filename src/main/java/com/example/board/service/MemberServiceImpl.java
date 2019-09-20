@@ -20,5 +20,10 @@ public class MemberServiceImpl implements MemberService {
  
         return dao.selectMember();
     }
+
+	@Override
+	public Boolean login(MemberModel memberModel) {
+		return dao.login(memberModel);
+	}
  
 }

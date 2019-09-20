@@ -20,6 +20,24 @@ public class MemberDAOImpl implements MemberDAO {
     @Override
     public List<MemberModel> selectMember() throws Exception {
 
-        return sqlSession.selectList(Namespace+".selectMember");
+        return sqlSession.selectList(Namespace + ".selectMember");
     }
+
+	@Override
+	public Boolean login(MemberModel memberModel) {
+		String user_id = memberModel.getUser_id();
+		MemberModel member = sqlSession.selectOne(Namespace + ".selectMemberLogin", user_id);
+		
+		if(member == null) {
+            return false;
+        }
+		if(!member.getUser_id().equals(memberModel.getUser_id())){
+            return false;
+        }
+        if(!member.getUser_pw().equals(memberModel.getUser_pw())){
+            return false;
+        }
+        
+        return true;
+	}
 }

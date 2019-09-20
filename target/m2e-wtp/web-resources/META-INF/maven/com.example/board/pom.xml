@@ -64,6 +64,13 @@
             <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
             <version>1.16</version>
         </dependency>
+        
+        <!-- Jackson JSON Mapper -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
 
 		<!-- Spring-jdbc -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->

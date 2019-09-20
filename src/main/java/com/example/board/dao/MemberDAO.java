@@ -6,5 +6,6 @@ import com.example.board.model.MemberModel;
  
 public interface MemberDAO {
     
-    public List<MemberModel> selectMember() throws Exception;
+    List<MemberModel> selectMember() throws Exception;
+    Boolean login(MemberModel memberModel);
 }

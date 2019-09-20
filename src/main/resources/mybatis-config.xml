@@ -6,6 +6,7 @@
 
 	<typeAliases>
 		<typeAlias type="com.example.board.model.MemberModel" alias="MemberModel" />
+		<typeAlias type="com.example.board.model.BbsModel" alias="BbsModel" />
 	</typeAliases>
 
 </configuration>
