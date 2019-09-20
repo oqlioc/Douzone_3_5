@@ -8,4 +8,6 @@ public interface MemberService {
     
     List<MemberModel> selectMember() throws Exception;
     Boolean login(MemberModel memberModel);
+    Boolean jsonIdCheck(String userId);
+    int insertMember(MemberModel memberModel);
 }

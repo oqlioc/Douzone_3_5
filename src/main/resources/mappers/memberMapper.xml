@@ -19,4 +19,12 @@
 		SELECT * FROM USER WHERE USER_ID = #{userId}
 	</select>
 	
+	<select id="jsonIdCheck" resultType="Integer">
+		SELECT count(*) FROM USER WHERE USER_ID = #{userId}
+	</select>
+	
+	<insert id="insertMember">
+		INSERT INTO USER (USER_ID, USER_PW, USER_NAME, USER_ADD, USER_ADD_CODE) VALUES (#{userId}, #{userPw}, #{userName}, #{userAdd}, #{userAddCode})
+	</insert>
+	
 </mapper>
