@@ -9,7 +9,7 @@ public class BbsModel {
     private String content;
     private Date regDate;
     private String userId;
-    
+      
 	public int getBoardNo() {
 		return boardNo;
 	}
