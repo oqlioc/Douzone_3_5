@@ -25,16 +25,19 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public Boolean login(MemberModel memberModel) {
-		String user_id = memberModel.getUser_id();
-		MemberModel member = sqlSession.selectOne(Namespace + ".selectMemberLogin", user_id);
+		String userId = memberModel.getUserId();
+		MemberModel member = sqlSession.selectOne(Namespace + ".selectMemberLogin", userId);
+		System.out.println("userId = "+userId);
+		System.out.println(member.getUserId());
+		System.out.println(member.getUserPw());
 		
 		if(member == null) {
             return false;
         }
-		if(!member.getUser_id().equals(memberModel.getUser_id())){
+		if(!member.getUserId().equals(memberModel.getUserId())){
             return false;
         }
-        if(!member.getUser_pw().equals(memberModel.getUser_pw())){
+        if(!member.getUserPw().equals(memberModel.getUserPw())){
             return false;
         }
         

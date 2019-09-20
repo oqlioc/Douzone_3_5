@@ -24,7 +24,7 @@ public class MemberController {
 			System.out.println(" 로그인 성공 입니다. ");
 
 			HttpSession session = request.getSession();
-			session.setAttribute("user_Id", memberModel.getUser_id());
+			session.setAttribute("userId", memberModel.getUserId());
 
 			return "main";
 		} else {

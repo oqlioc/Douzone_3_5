@@ -16,7 +16,7 @@
 	</select>
 	
 	<insert id="insertBbs"> 
-        INSERT INTO BBS (title, content, reg_date, user_id) VALUES (#{title}, #{content}, now(), #{user_id})
+        INSERT INTO BBS (title, content, reg_date, user_id) VALUES (#{title}, #{content}, now(), #{userId})
     </insert>
     
     <select id="selectBbs" resultType="BbsModel">
@@ -28,7 +28,7 @@
 	</delete>
 	
 	<update id="updateBbsModify">
-		UPDATE BBS SET title = #{bbsModel.title}, content = #{bbsModel.content}, reg_date = now() WHERE BOARD_NO = #{bbsModel.board_no}
+		UPDATE BBS SET title = #{bbsModel.title}, content = #{bbsModel.content}, reg_date = now() WHERE BOARD_NO = #{bbsModel.boardNo}
 	</update>
    
 </mapper>

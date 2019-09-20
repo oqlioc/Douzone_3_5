@@ -18,12 +18,12 @@
 		<tbody>
 			<c:forEach items="${memberList}" var="member">
 				<tr>
-					<td>${member.user_id}</td>
-					<td>${member.user_pw}</td>
-					<td>${member.user_name}</td>
-					<td>${member.user_add}</td>
-					<td>${member.user_add_code}</td>
-					<td>${member.is_active}</td>
+					<td>${member.userId}</td>
+					<td>${member.userPw}</td>
+					<td>${member.userName}</td>
+					<td>${member.userAdd}</td>
+					<td>${member.userAddCode}</td>
+					<td>${member.isActive}</td>
 				</tr>
 			</c:forEach>
 		</tbody>

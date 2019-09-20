@@ -4,17 +4,17 @@ import java.util.Date;
 
 public class BbsModel {
 
-	private int board_no;
+	private int boardNo;
     private String title;
     private String content;
-    private Date reg_date;
-    private String user_id;
+    private Date regDate;
+    private String userId;
     
-	public int getBoard_no() {
-		return board_no;
+	public int getBoardNo() {
+		return boardNo;
 	}
-	public void setBoard_no(int board_no) {
-		this.board_no = board_no;
+	public void setBoardNo(int boardNo) {
+		this.boardNo = boardNo;
 	}
 	public String getTitle() {
 		return title;
@@ -28,17 +28,19 @@ public class BbsModel {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getReg_date() {
-		return reg_date;
+	public Date getRegDate() {
+		return regDate;
 	}
-	public void setReg_date(Date reg_date) {
-		this.reg_date = reg_date;
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
-	public String getUser_id() {
-		return user_id;
+	public String getUserId() {
+		return userId;
 	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
+    
+	
     
 }

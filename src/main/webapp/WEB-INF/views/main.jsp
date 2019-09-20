@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
-	String user_id = (String) session.getAttribute("user_Id");
+	String userId = (String) session.getAttribute("userId");
 %>
 <!DOCTYPE html>
 <html>
@@ -12,13 +12,13 @@
 </head>
 <body>
 <%
-	if( user_id == null) {
+	if( userId == null) {
 %>
 		<input type='button' value='로그인' onclick="javascript:location.href='/loginform'">
 <%
 	}else {
 %>
-<h1><%= user_id %>님아 왜 이제옴</h1>
+<h1><%= userId %>님아 왜 이제옴</h1>
 		<input type="submit" value="로그아웃" onclick="location.href='/member/logout'">
 <%	
 	}

@@ -3,7 +3,7 @@
 <%@ page import="com.example.board.model.BbsModel" %>
 <%
 	BbsModel bbsModel = (BbsModel) request.getAttribute("bbsModel");
-	String user_id = (String) session.getAttribute("user_Id");
+	String userId = (String) session.getAttribute("userId");
 %>
 <!DOCTYPE html>
 <html>
@@ -30,7 +30,7 @@
 					<div align="center">작성자</div>
 				</td>
 				<td>
-					<input name="user_id" type="text" size="50" maxlength="100" value="${bbsModel.user_id}" readonly />
+					<input name="userId" type="text" size="50" maxlength="100" value="${bbsModel.userId}" readonly />
 				</td>
 			</tr>
 			<tr>
@@ -52,10 +52,10 @@
 			<tr align="center" valign="middle">
 				<td colspan="5">
 					<%
-						if(user_id.equals(bbsModel.getUser_id())) {
+						if(userId.equals(bbsModel.getUserId())) {
 					%>
 					<a href="javascript:modifyBbs()">[수정]</a>&nbsp;&nbsp;
-					<a href="javascript:location.href = '/bbs/delete?bbsno=${bbsModel.board_no}'">[삭제]</a>&nbsp;&nbsp;
+					<a href="javascript:location.href = '/bbs/delete?bbsno=${bbsModel.boardNo}'">[삭제]</a>&nbsp;&nbsp;
 					<%		
 						}
 					%>

@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%
 	request.setCharacterEncoding("utf-8");
-	String user_id = (String) session.getAttribute("user_Id");	
+	String userId = (String) session.getAttribute("userId");	
 %>
 <!DOCTYPE html>
 <html>
@@ -12,7 +12,7 @@
 </head>
 <script language="javascript">
 	window.onload = function () {
-		if(<%=user_id%> == null) {
+		if(<%=userId%> == null) {
 			alert("로그인후 이용해주세요")
 			location.href = "/bbs/bbs_list";
 		}
@@ -31,7 +31,7 @@
 					<div align="center">작성자</div>
 				</td>
 				<td>
-					<input name="user_id" id="user_id" type="text" size="50" maxlength="100" value="<%=user_id%>" readonly/>
+					<input name="userId" id="userId" type="text" size="50" maxlength="100" value="<%=userId%>" readonly/>
 				</td>
 			</tr>
 			<tr>
@@ -64,11 +64,11 @@
 	$(document).ready(function(){
 		$("#wrtie_process").click(function(){
  			var json = {
- 				user_id : $("#user_id").val(),
+ 				userId : $("#userId").val(),
 				title : $("#title").val(),
 				content : $("#content").val()
 			};
- 			console.log(json.user_id);
+ 			console.log(json.userId);
  			console.log(json.title);
 			$.ajax({
 				type : "post",

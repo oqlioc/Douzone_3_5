@@ -11,8 +11,8 @@
 	<hr>
 
 	<form action="/member/login" method="post">
-		<b> ID: <input type="text" name="user_id" /> <br><br>
-		<b> PASS: <input type="password" name="user_pw" /> <br><br>
+		<b> ID: <input type="text" name="userId" /> <br><br>
+		<b> PASS: <input type="password" name="userPw" /> <br><br>
 		<input type="submit" value="login" /> <br><br>
 	</form>
 

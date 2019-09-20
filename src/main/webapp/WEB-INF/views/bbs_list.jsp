@@ -5,7 +5,7 @@
 
 <%
 	List<BbsModel> bbsList = (List<BbsModel>) request.getAttribute("boardlist");
-	String user_id = (String) session.getAttribute("user_Id");
+	String userId = (String) session.getAttribute("userId");
 %>
 
 
@@ -45,7 +45,7 @@
 	%>
 	<tr align="center" valign="middle">
 		<td height="23">
-			<%=bb.getBoard_no()%>
+			<%=bb.getBoardNo()%>
 		</td>
 		
 		<td>
@@ -55,23 +55,23 @@
 		</td>
 		<td>
 			<div align="center">
-				<a href="/bbs/read?bbsno=<%=bb.getBoard_no()%>"><%=bb.getContent()%></a>
+				<a href="/bbs/read?bbsno=<%=bb.getBoardNo()%>"><%=bb.getContent()%></a>
 			</div>
 		</td>	
 		<td>
 			<div align="center">
-				<%=bb.getUser_id()%>
+				<%=bb.getUserId()%>
 			</div>
 		</td>
 		<td>
 			<div align="center">
-				<%=bb.getReg_date()%>
+				<%=bb.getRegDate()%>
 			</div>
 		</td>
 	</tr>
 	<%} %>
 	<%
-		if(user_id != null) {
+		if(userId != null) {
 	%>
 	<tr align="right">
 		<td colspan="5">

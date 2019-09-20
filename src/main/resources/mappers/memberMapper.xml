@@ -12,11 +12,11 @@
 		이렇게 해야 한다. -->
 
 	<select id="selectMember" resultType="MemberModel">
-		SELECT USER_ID, USER_PW , USER_NAME, USER_ADD, USER_ADD, USER_ADD_CODE, IF('IS_ACTIVE', 'true', 'false') FROM USER
+		SELECT * FROM USER
 	</select>
 
 	<select id="selectMemberLogin" resultType="MemberModel">
-		SELECT USER_ID, USER_PW , USER_NAME, USER_ADD, USER_ADD, USER_ADD_CODE, IF('IS_ACTIVE', 'true', 'false') FROM USER WHERE USER_ID = #{user_id}
+		SELECT * FROM USER WHERE USER_ID = #{userId}
 	</select>
 	
 </mapper>
