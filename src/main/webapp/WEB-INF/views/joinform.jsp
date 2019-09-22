@@ -30,22 +30,6 @@ function formCheck() {
         return false;
     }
     
-    /* $(document).ready(function(){ 
-         var id=$('input[name=userId]').val();
-        var isOk = true;
-        $.ajax({
-            url: 'joinIdCheckJson',
-            data: {userId: id},  // userid=id입력값
-            success: function (isDup) {
-                if (isDup) {// id중복
-                	alert('아이디 중복체크 하시오.');
-                    frm.userId.focus();
-                    isOk=false;
-                }
-            }
-        }); 
-	 }); */
-    
     return true;
     
 }
