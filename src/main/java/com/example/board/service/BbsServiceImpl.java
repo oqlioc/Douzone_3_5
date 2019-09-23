@@ -14,7 +14,7 @@ import com.example.board.model.BbsModel;
 
 @Service
 public class BbsServiceImpl implements BbsService{
-
+	
 	@Inject
 	private BbsDAO bbsdao;
 
@@ -43,5 +43,4 @@ public class BbsServiceImpl implements BbsService{
 		bbsdao.bbsModify(bbsmodel);
 	}
 
-	
 }

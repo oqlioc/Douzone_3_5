@@ -30,5 +30,5 @@
 	<update id="updateBbsModify">
 		UPDATE BBS SET title = #{title}, content = #{content}, reg_date = now() WHERE BOARD_NO = #{boardNo}
 	</update>
-   
+	
 </mapper>

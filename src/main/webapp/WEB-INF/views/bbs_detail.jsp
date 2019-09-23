@@ -60,10 +60,14 @@
 			<tr align="center" valign="middle">
 				<td colspan="5">
 					<%
-						if(userId.equals(bbsModel.getUserId())) {
+						if(userId == null){
 					%>
-					<a href="javascript:modifyBbs()">[수정]</a>&nbsp;&nbsp;
-					<a href="javascript:location.href = '/bbs/delete?bbsno=${bbsModel.boardNo}'">[삭제]</a>&nbsp;&nbsp;
+						<a href="javascript:location.href='/loginform'">[로그인]</a>&nbsp;&nbsp;
+					<%
+						}else if(userId.equals(bbsModel.getUserId())) {
+					%>
+							<a href="javascript:modifyBbs()">[수정]</a>&nbsp;&nbsp;
+							<a href="javascript:location.href = '/bbs/delete?bbsno=${bbsModel.boardNo}'">[삭제]</a>&nbsp;&nbsp;
 					<%		
 						}
 					%>

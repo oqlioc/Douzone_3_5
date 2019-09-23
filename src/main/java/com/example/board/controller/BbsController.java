@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.board.model.BbsModel;
 import com.example.board.model.MemberModel;
+import com.example.board.model.PageModel;
 import com.example.board.service.BbsService;
 import com.example.board.service.MemberService;
 
@@ -34,12 +35,11 @@ public class BbsController {
 	@RequestMapping("/bbs_list")
 	public String board_list(Model model, HttpServletRequest request) throws Exception {
 		model.addAttribute("request", request);
-
 		List<BbsModel> boardList = bbsservice.getBoardList(model);
 		model.addAttribute("boardlist", boardList);
 		return "bbs_list";
 	}
-	
+    
 	@RequestMapping("/write")
 	@ResponseBody
 	public Object board_write(@RequestParam Map<String, Object> paramMap) throws Exception {
