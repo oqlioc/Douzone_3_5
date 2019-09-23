@@ -15,7 +15,7 @@ public class MemberDAOImpl implements MemberDAO {
     @Override
 	public String getPw(String userId) {
     	MemberModel member = sqlSession.selectOne(Namespace + ".selectMemberLogin", userId);
-		return member.getUserId();
+		return member.getUserPw();
 	}
 
 	@Inject
