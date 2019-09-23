@@ -11,35 +11,35 @@
 	</select> 
 		이렇게 해야 한다. -->
 
-	<select id="selectBbslist" resultType="BbsModel">
-		SELECT * FROM BBS
+	<select id="selectbbslist" resultType="bbsModel">
+		SELECT * FROM bbs
 	</select>
 	
-	<insert id="insertBbs"> 
-        INSERT INTO BBS (title, content, reg_date, user_id) VALUES (#{title}, #{content}, now(), #{userId})
+	<insert id="insertbbs"> 
+        INSERT INTO bbs (title, content, reg_date, user_id) VALUES (#{title}, #{content}, now(), #{userId})
     </insert>
     
-    <select id="selectBbs" resultType="BbsModel">
-		SELECT * FROM BBS WHERE BOARD_NO = #{bbsno}
+    <select id="selectbbs" resultType="bbsModel">
+		SELECT * FROM bbs WHERE board_no = #{bbsno}
 	</select>
 	
-	<delete id="deleteBbs">
-		DELETE FROM BBS WHERE BOARD_NO = #{bbsno}
+	<delete id="deletebbs">
+		DELETE FROM bbs WHERE board_no = #{bbsno}
 	</delete>
 	
-	<update id="updateBbsModify">
-		UPDATE BBS SET title = #{title}, content = #{content}, reg_date = now() WHERE BOARD_NO = #{boardNo}
+	<update id="updatebbsModify">
+		UPDATE bbs SET title = #{title}, content = #{content}, reg_date = now() WHERE board_no = #{boardNo}
 	</update>
 	
-	<select id="listpaging" resultType="BbsModel">
-		SELECT * FROM BBS ORDER BY BOARD_NO DESC LIMIT #{page}, 10
+	<select id="listpaging" resultType="bbsModel">
+		SELECT * FROM bbs ORDER BY board_no DESC LIMIT #{page}, 10
 	</select>
 	
-	<select id="listCriteria" resultType="BbsModel">
-		SELECT * FROM BBS ORDER BY BOARD_NO DESC LIMIT #{pageStart}, #{perPageNum}
+	<select id="listCriteria" resultType="bbsModel">
+		SELECT * FROM bbs ORDER BY board_no DESC LIMIT #{pageStart}, #{perPageNum}
 	</select>
 	
-	<select id="countBbs" resultType="_int">
-		SELECT COUNT(*) FROM BBS
+	<select id="countbbs" resultType="_int">
+		SELECT COUNT(*) FROM bbs
 	</select>
 </mapper>
