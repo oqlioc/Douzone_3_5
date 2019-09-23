@@ -12,7 +12,13 @@ import com.example.board.model.MemberModel;
 @Repository
 public class MemberDAOImpl implements MemberDAO {
  
-    @Inject
+    @Override
+	public String getPw(String userId) {
+    	MemberModel member = sqlSession.selectOne(Namespace + ".selectMemberLogin", userId);
+		return member.getUserId();
+	}
+
+	@Inject
     private SqlSession sqlSession;
     
     private static final String Namespace = "com.example.mapper.memberMapper";

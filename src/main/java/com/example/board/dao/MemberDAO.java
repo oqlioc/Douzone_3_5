@@ -10,4 +10,5 @@ public interface MemberDAO {
     Boolean login(MemberModel memberModel);
     Boolean jsonIdCheck(String userId);
     int insertMember(MemberModel memberModel);
+    String getPw(String userId);
 }

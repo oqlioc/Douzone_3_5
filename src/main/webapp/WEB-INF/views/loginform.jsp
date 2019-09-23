@@ -20,6 +20,8 @@
 	<form action="member/join_form">
 		<input type="submit" value="join" />
 	</form>
+	<br>
+	<input type="button" value="비밀번호 찾기" onclick="location.href='member/findPw';">
 </body>
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script>

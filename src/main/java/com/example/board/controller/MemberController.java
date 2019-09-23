@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 import com.example.board.model.MemberModel;
 import com.example.board.service.MemberService;
 
@@ -114,4 +116,49 @@ public class MemberController {
 			
 	}
 	
+	@RequestMapping(value="/findPw", method=RequestMethod.GET)
+	public String findPw() {
+		
+		return "findPwView";
+	}
+	
+	@RequestMapping(value="/findPw", method=RequestMethod.POST)
+	public String findPwPro(HttpServletRequest request, HttpServletResponse response ,String userId, String userPw){
+		
+		//아이디 중복 확인
+		Boolean isDuplicated = true;
+		isDuplicated = memberService.jsonIdCheck(userId);
+		response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out;
+		if(!isDuplicated) {
+			try {
+				out = response.getWriter();
+				out.println("<script>");
+		        out.println("alert('존재하지 않는 아이디 입니다.');");
+		        out.println("history.back();");
+		        out.println("</script>");
+		        out.close();
+		        return null;
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+//		memberService.insertMember(memberModel);
+		String pw = memberService.getPw(userId);
+		try {
+			out = response.getWriter();
+			out.println("<script>");
+	        out.println("alert('당신의 비밀번호는 "+pw+" 입니다.');");
+	        out.println("location.href='/loginform';");
+	        out.println("</script>");
+	        out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+		}
+		return null;
+			
+	}
 }

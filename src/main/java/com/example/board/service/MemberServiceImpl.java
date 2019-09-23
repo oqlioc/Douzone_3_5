@@ -35,6 +35,11 @@ public class MemberServiceImpl implements MemberService {
 	public int insertMember(MemberModel memberModel) {
 		return dao.insertMember(memberModel);
 	}
+
+	@Override
+	public String getPw(String userId) {
+		return dao.getPw(userId);
+	}
 	
 	
  
