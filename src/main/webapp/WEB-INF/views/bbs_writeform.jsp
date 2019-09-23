@@ -68,8 +68,17 @@
 				title : $("#title").val(),
 				content : $("#content").val()
 			};
- 			console.log(json.userId);
- 			console.log(json.title);
+            if (json.title === "") {
+                alert("제목를 입력하세요");
+                $("#title").focus();
+                return;
+            }
+            if (json.content === "") {
+                alert("내용을 입력하세요");
+                $("#content").focus();
+                return;
+            }
+            
 			$.ajax({
 				type : "post",
 				url : "/bbs/write",

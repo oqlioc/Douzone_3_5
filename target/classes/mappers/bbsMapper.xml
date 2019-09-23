@@ -11,23 +11,23 @@
 	</select> 
 		이렇게 해야 한다. -->
 
-	<select id="selectbbslist" resultType="bbsModel">
+	<select id="selectBbslist" resultType="bbsModel">
 		SELECT * FROM bbs
 	</select>
 	
-	<insert id="insertbbs"> 
+	<insert id="insertBbs"> 
         INSERT INTO bbs (title, content, reg_date, user_id) VALUES (#{title}, #{content}, now(), #{userId})
     </insert>
     
-    <select id="selectbbs" resultType="bbsModel">
+    <select id="selectBbs" resultType="bbsModel">
 		SELECT * FROM bbs WHERE board_no = #{bbsno}
 	</select>
 	
-	<delete id="deletebbs">
+	<delete id="deleteBbs">
 		DELETE FROM bbs WHERE board_no = #{bbsno}
 	</delete>
 	
-	<update id="updatebbsModify">
+	<update id="updateBbsModify">
 		UPDATE bbs SET title = #{title}, content = #{content}, reg_date = now() WHERE board_no = #{boardNo}
 	</update>
 	
@@ -39,7 +39,7 @@
 		SELECT * FROM bbs ORDER BY board_no DESC LIMIT #{pageStart}, #{perPageNum}
 	</select>
 	
-	<select id="countbbs" resultType="_int">
+	<select id="countBbs" resultType="_int">
 		SELECT COUNT(*) FROM bbs
 	</select>
 </mapper>
