@@ -25,5 +25,17 @@ public class MemberServiceImpl implements MemberService {
 	public Boolean login(MemberModel memberModel) {
 		return dao.login(memberModel);
 	}
+
+	@Override
+	public Boolean jsonIdCheck(String userId) {
+		return dao.jsonIdCheck(userId);
+	}
+
+	@Override
+	public int insertMember(MemberModel memberModel) {
+		return dao.insertMember(memberModel);
+	}
+	
+	
  
 }

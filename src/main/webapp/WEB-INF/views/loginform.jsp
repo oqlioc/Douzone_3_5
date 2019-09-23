@@ -16,7 +16,7 @@
 		<input type="submit" value="login" /> <br><br>
 	</form>
 
-	<form action="join_form">
+	<form action="member/join_form">
 		<input type="submit" value="join" />
 	</form>
 </body>

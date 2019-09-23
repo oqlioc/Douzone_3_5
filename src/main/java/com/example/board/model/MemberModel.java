@@ -6,7 +6,7 @@ public class MemberModel {
     private String userPw;
     private String userName;
     private String userAdd;
-    private int useAddCode;
+    private int userAddCode;
     private Boolean isActive;
     
 	public String getUserId() {
@@ -33,11 +33,11 @@ public class MemberModel {
 	public void setUserAdd(String userAdd) {
 		this.userAdd = userAdd;
 	}
-	public int getUseAddCode() {
-		return useAddCode;
+	public int getUserAddCode() {
+		return userAddCode;
 	}
-	public void setUseAddCode(int useAddCode) {
-		this.useAddCode = useAddCode;
+	public void setUserAddCode(int useAddCode) {
+		this.userAddCode = useAddCode;
 	}
 	public boolean getIsActive() {
 		return isActive;
@@ -49,7 +49,7 @@ public class MemberModel {
 	@Override
 	public String toString() {
 		return "MemberModel [userId=" + userId + ", userPw=" + userPw + ", userName=" + userName + ", userAdd="
-				+ userAdd + ", useAddCode=" + useAddCode + ", isActive=" + isActive + "]";
+				+ userAdd + ", userAddCode=" + userAddCode + ", isActive=" + isActive + "]";
 	}
 	
 }

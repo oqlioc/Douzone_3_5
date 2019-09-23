@@ -1,13 +1,12 @@
 package com.example.board.controller;
-
+import java.io.IOException;
+import java.io.PrintWriter;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.example.board.model.MemberModel;
 import com.example.board.service.MemberService;
 
@@ -38,5 +37,81 @@ public class MemberController {
 		session.invalidate();
 		return "main";
 	}
+	
+	@RequestMapping("/join_form")
+	public String join(HttpServletRequest request){
+		return "joinform";	
+	}
+	
+//	joinIdCheckJson
+	@RequestMapping("/joinIdCheckJson")
+	public String joinIdCheckJson(HttpServletRequest request, HttpServletResponse response ){
+		String userId = request.getParameter("userId");
+		Boolean isDuplicated = false;
+		isDuplicated = memberService.jsonIdCheck(userId);
+		response.setContentType("application/json; charset=UTF-8");
+		PrintWriter out;
+		try {
+			out = response.getWriter();
+			out.println(isDuplicated);	
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
 
+	@RequestMapping("/joinPro")
+	public String joinPro(HttpServletRequest request, HttpServletResponse response , MemberModel memberModel, String userAdd1,String userAdd2,String userAdd3,String userAdd4){
+		if("".equals(userAdd1)) {
+			userAdd1="";
+		}
+		if("".equals(userAdd2)) {
+			userAdd2="";
+		}
+		if("".equals(userAdd3)) {
+			userAdd3="";
+		}
+		if("".equals(userAdd4)) {
+			userAdd4="";
+		}
+		memberModel.setUserAdd(userAdd1+" "+userAdd3+" "+userAdd4);
+		
+		//아이디 중복 확인
+		Boolean isDuplicated = false;
+		isDuplicated = memberService.jsonIdCheck(memberModel.getUserId());
+		response.setContentType("text/html; charset=UTF-8");
+        PrintWriter out;
+		if(isDuplicated) {
+			try {
+				out = response.getWriter();
+				out.println("<script>");
+		        out.println("alert('아이디 중복검사 해야된다. 버튼 못봄?');");
+		        out.println("history.back();");
+		        out.println("</script>");
+		        out.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		memberService.insertMember(memberModel);
+		
+		try {
+			out = response.getWriter();
+			out.println("<script>");
+	        out.println("alert('회원가입 완료');");
+	        out.println("location.href='/loginform';");
+	        out.println("</script>");
+	        out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+		}
+		return null;
+			
+	}
+	
 }

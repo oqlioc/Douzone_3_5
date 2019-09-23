@@ -43,4 +43,22 @@ public class MemberDAOImpl implements MemberDAO {
         
         return true;
 	}
+	
+	@Override
+	public Boolean jsonIdCheck(String userId) {
+		int count = sqlSession.selectOne(Namespace + ".jsonIdCheck", userId);
+		if(count>0) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public int insertMember(MemberModel memberModel) {
+		int count = sqlSession.insert(Namespace + ".insertMember",memberModel);
+		return 0;
+	}
+	
+	
+	
 }
