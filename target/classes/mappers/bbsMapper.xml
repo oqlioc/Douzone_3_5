@@ -12,27 +12,27 @@
 		이렇게 해야 한다. -->
 
 	<select id="selectBbslist" resultType="BbsModel">
-		SELECT * FROM BBS
+		SELECT * FROM bbs
 	</select>
 	
 	<insert id="insertBbs"> 
-        INSERT INTO BBS (title, content, reg_date, user_id) VALUES (#{title}, #{content}, now(), #{userId})
+        INSERT INTO bbs (title, content, reg_date, user_id) VALUES (#{title}, #{content}, now(), #{userId})
     </insert>
     
     <select id="selectBbs" resultType="BbsModel">
-		SELECT * FROM BBS WHERE BOARD_NO = #{bbsno}
+		SELECT * FROM bbs WHERE BOARD_NO = #{bbsno}
 	</select>
 	
 	<delete id="deleteBbs">
-		DELETE FROM BBS WHERE BOARD_NO = #{bbsno}
+		DELETE FROM bbs WHERE BOARD_NO = #{bbsno}
 	</delete>
 	
 	<update id="updateBbsModify">
-		UPDATE BBS SET title = #{title}, content = #{content}, reg_date = now() WHERE BOARD_NO = #{boardNo}
+		UPDATE bbs SET title = #{title}, content = #{content}, reg_date = now() WHERE BOARD_NO = #{boardNo}
 	</update>
 	
 	<select id="listpaging" resultType="BbsModel">
-		SELECT * FROM BBS LIMIT #{page}, 10
+		SELECT * FROM bbs LIMIT #{page}, 10
 	</select>
 	
 </mapper>

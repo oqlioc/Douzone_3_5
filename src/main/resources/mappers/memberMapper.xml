@@ -12,19 +12,19 @@
 		이렇게 해야 한다. -->
 
 	<select id="selectMember" resultType="MemberModel">
-		SELECT * FROM USER
+		SELECT * FROM user
 	</select>
 
 	<select id="selectMemberLogin" resultType="MemberModel">
-		SELECT * FROM USER WHERE USER_ID = #{userId}
+		SELECT * FROM user WHERE user_id = #{userId}
 	</select>
 	
 	<select id="jsonIdCheck" resultType="Integer">
-		SELECT count(*) FROM USER WHERE USER_ID = #{userId}
+		SELECT count(*) FROM user WHERE user_id = #{userId}
 	</select>
 	
 	<insert id="insertMember">
-		INSERT INTO USER (USER_ID, USER_PW, USER_NAME, USER_ADD, USER_ADD_CODE) VALUES (#{userId}, #{userPw}, #{userName}, #{userAdd}, #{userAddCode})
+		INSERT INTO user (user_id, user_pw, user_name, user_add, user_add_code) VALUES (#{userId}, #{userPw}, #{userName}, #{userAdd}, #{userAddCode})
 	</insert>
 	
 </mapper>
