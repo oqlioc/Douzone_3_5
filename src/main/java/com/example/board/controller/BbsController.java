@@ -79,4 +79,12 @@ public class BbsController {
 		
 		return "redirect:bbs_list";
 	}
+	//-----------------------------------------
+	
+	@RequestMapping("/listciteria")
+	public String listciteria(BbsModel bbsModel, Model model) throws Exception {
+		bbsservice.bbsModify(bbsModel);
+		
+		return "redirect:bbs_list";
+	}
 }

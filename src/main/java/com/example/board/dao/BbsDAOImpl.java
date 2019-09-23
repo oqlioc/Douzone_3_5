@@ -47,4 +47,14 @@ public class BbsDAOImpl implements BbsDAO {
 		System.out.println(bbsModel.toString());
 		session.update(Namespace + ".updateBbsModify", bbsModel);
 	}
+//--------------------------------
+	@Override
+	public List<BbsModel> listPaging(int page) {
+		if (page <= 0) {
+			page = 1;
+		}
+		
+		page = (page -1) * 10;
+		return session.selectOne(Namespace + ".listpaging", page);
+	}
 }

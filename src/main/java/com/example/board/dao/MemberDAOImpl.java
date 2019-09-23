@@ -31,9 +31,6 @@ public class MemberDAOImpl implements MemberDAO {
 		System.out.println(member.getUserId());
 		System.out.println(member.getUserPw());
 		
-		if(member == null) {
-            return false;
-        }
 		if(!member.getUserId().equals(memberModel.getUserId())){
             return false;
         }

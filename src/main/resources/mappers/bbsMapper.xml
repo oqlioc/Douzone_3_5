@@ -31,4 +31,8 @@
 		UPDATE BBS SET title = #{title}, content = #{content}, reg_date = now() WHERE BOARD_NO = #{boardNo}
 	</update>
 	
+	<select id="listpaging" resultType="BbsModel">
+		SELECT * FROM BBS LIMIT #{page}, 10
+	</select>
+	
 </mapper>
