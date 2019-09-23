@@ -66,16 +66,16 @@
 	<%
 		if(userId != null) {
 	%>
-	<tr align="right">
-		<td colspan="5">
-	   		<a href="/bbs_write_form">[글쓰기]</a>
-		</td>
-	</tr>
+			<tr align="right">
+				<td colspan="5">
+			   		<a href="/bbs_write_form">[글쓰기]</a>
+				</td>
+			</tr>
 	<%		
 		}
 	%>
 </table>
-<div style="background-color:red; margin-left: auto; margin-right: auto;">
+<div style="text-align:center">
 	<c:if test="${pageMaker.prev}">
 		<a href="/bbs/listPaging?page=${pageMaker.startPage - 1}">이전</a>
 	</c:if>
