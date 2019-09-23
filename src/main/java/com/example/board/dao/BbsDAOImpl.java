@@ -17,13 +17,6 @@ public class BbsDAOImpl implements BbsDAO {
 	SqlSession session;
 
 	private static final String Namespace = "com.example.mapper.bbsMapper";
-	
-	@Override
-	public List<BbsModel> getBoardList() {
-		List<BbsModel> boardList = session.selectList(Namespace + ".selectBbslist");
-
-		return boardList;
-	}
 
 	@Override
 	public int bbsCreate(Map<String, Object> paramMap) {
@@ -47,16 +40,6 @@ public class BbsDAOImpl implements BbsDAO {
 	public void bbsModify(BbsModel bbsModel) {
 		System.out.println(bbsModel.toString());
 		session.update(Namespace + ".updateBbsModify", bbsModel);
-	}
-//--------------------------------
-	@Override
-	public List<BbsModel> listPaging(int page) {
-		if (page <= 0) {
-			page = 1;
-		}
-		
-		page = (page -1) * 10;
-		return session.selectOne(Namespace + ".listpaging", page);
 	}
 
 	@Override

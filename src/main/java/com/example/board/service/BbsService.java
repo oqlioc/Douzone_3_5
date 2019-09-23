@@ -10,13 +10,10 @@ import com.example.board.model.Criteria;
 
 public interface BbsService {
 
-	List<BbsModel> getBoardList(Model model);
 	int bbsCreate(Map<String, Object> paramMap);
 	BbsModel bbsRead(int bbsno);
 	void bbsDelete(int bbsno);
 	void bbsModify(BbsModel bbsmodel);
-	
-	//-----------------------------------
 	List<BbsModel> listCriteria(Criteria criteria);
 	int countBbs(Criteria criteria);
 }
