@@ -20,11 +20,6 @@ public class BbsServiceImpl implements BbsService{
 	private BbsDAO bbsdao;
 
 	@Override
-	public List<BbsModel> getBoardList(Model model) {
-		return bbsdao.getBoardList();
-	}
-
-	@Override
 	public int bbsCreate(Map<String, Object> paramMap) {
 		return bbsdao.bbsCreate(paramMap);
 	}
