@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.board.model.BbsModel;
 import com.example.board.model.MemberModel;
-import com.example.board.model.PageModel;
+import com.example.board.model.PageMaker;
+import com.example.board.model.Criteria;
 import com.example.board.service.BbsService;
 import com.example.board.service.MemberService;
 
@@ -32,11 +33,17 @@ public class BbsController {
 	@Inject
 	private BbsService bbsservice;
 	
-	@RequestMapping("/bbs_list")
-	public String board_list(Model model, HttpServletRequest request) throws Exception {
-		model.addAttribute("request", request);
-		List<BbsModel> boardList = bbsservice.getBoardList(model);
-		model.addAttribute("boardlist", boardList);
+	@RequestMapping("/listPaging")
+	public String listPaging(BbsModel bbsModel, Criteria criteria, Model model) throws Exception {
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(bbsservice.countBbs(criteria));
+		
+		List<BbsModel> boardList = bbsservice.listCriteria(criteria);
+				
+		model.addAttribute("articles", boardList);
+		model.addAttribute("pageMaker", pageMaker);
+		
 		return "bbs_list";
 	}
     
@@ -70,21 +77,14 @@ public class BbsController {
 	public String board_delete(@RequestParam(value="bbsno") int bbsno, Model model) throws Exception {
 		bbsservice.bbsDelete(bbsno);
 		
-		return "redirect:bbs_list";
+		return "redirect:listPaging";
 	}
 
 	@RequestMapping("/modify")
 	public String board_modify(BbsModel bbsModel, Model model) throws Exception {
 		bbsservice.bbsModify(bbsModel);
 		
-		return "redirect:bbs_list";
-	}
-	//-----------------------------------------
+		return "redirect:listPaging";
+	}	
 	
-	@RequestMapping("/listciteria")
-	public String listciteria(BbsModel bbsModel, Model model) throws Exception {
-		bbsservice.bbsModify(bbsModel);
-		
-		return "redirect:bbs_list";
-	}
 }

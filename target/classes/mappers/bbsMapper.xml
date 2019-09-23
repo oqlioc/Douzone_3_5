@@ -32,7 +32,14 @@
 	</update>
 	
 	<select id="listpaging" resultType="BbsModel">
-		SELECT * FROM BBS LIMIT #{page}, 10
+		SELECT * FROM BBS ORDER BY BOARD_NO DESC LIMIT #{page}, 10
 	</select>
 	
+	<select id="listCriteria" resultType="BbsModel">
+		SELECT * FROM BBS ORDER BY BOARD_NO DESC LIMIT #{pageStart}, #{perPageNum}
+	</select>
+	
+	<select id="countBbs" resultType="_int">
+		SELECT COUNT(*) FROM BBS
+	</select>
 </mapper>

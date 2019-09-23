@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.example.board.model.BbsModel;
+import com.example.board.model.Criteria;
 
 @Repository
 public class BbsDAOImpl implements BbsDAO {
@@ -56,5 +57,15 @@ public class BbsDAOImpl implements BbsDAO {
 		
 		page = (page -1) * 10;
 		return session.selectOne(Namespace + ".listpaging", page);
+	}
+
+	@Override
+	public List<BbsModel> listPaging(Criteria criteria) {
+		return session.selectList(Namespace + ".listCriteria", criteria);
+	}
+
+	@Override
+	public int countBbs(Criteria criteria) {
+		return session.selectOne(Namespace + ".countBbs", criteria);
 	}
 }

@@ -14,7 +14,7 @@
 	window.onload = function () {
 		if(<%=userId%> == null) {
 			alert("로그인후 이용해주세요")
-			location.href = "/bbs/bbs_list";
+			location.href = "/bbs/listPaging";
 		}
 	}
 </script>
@@ -53,7 +53,7 @@
 			<tr align="center" valign="middle">
 				<td colspan="5">
 					<a id="wrtie_process">[등록]</a>&nbsp;&nbsp;
-					<a href="javascript:location.href = '/bbs/bbs_list'">[뒤로]</a>
+					<a href="javascript:location.href = '/bbs/listPaging'">[뒤로]</a>
 				</td>
 			</tr>
 		</table>
@@ -79,7 +79,7 @@
 				success : function(retVal){
 					if(retVal.code == "SUCCESS") {
 						alert(retVal.message);
-                    	location.href = "/bbs/bbs_list";
+                    	location.href = "/bbs/listPaging";
 					} else {
                     	alert(retVal.message);
                     }

@@ -23,7 +23,7 @@
 <%	
 	}
 %>
-<input type='button' value='게시판' onclick="javascript:location.href='/bbs/bbs_list'">
+<input type='button' value='게시판' onclick="javascript:location.href='/bbs/listPaging'">
 
 </body>
 </html>

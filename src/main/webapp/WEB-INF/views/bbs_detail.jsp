@@ -71,7 +71,7 @@
 					<%		
 						}
 					%>
-					<a href="javascript:location.href = '/bbs/bbs_list'">[게시판메인]</a>
+					<a href="javascript:location.href = '/bbs/listPaging'">[게시판메인]</a>
 				</td>
 			</tr>
 		</table>

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.ui.Model;
 
 import com.example.board.model.BbsModel;
+import com.example.board.model.Criteria;
 
 public interface BbsService {
 
@@ -14,4 +15,8 @@ public interface BbsService {
 	BbsModel bbsRead(int bbsno);
 	void bbsDelete(int bbsno);
 	void bbsModify(BbsModel bbsmodel);
+	
+	//-----------------------------------
+	List<BbsModel> listCriteria(Criteria criteria);
+	int countBbs(Criteria criteria);
 }
